@@ -9,11 +9,14 @@ export default function SignSection() {
     const SIGN_BUTTON_STYLE = "w-full py-3 bg-sky-300 rounded-xl";
 
     const [isSignInModal, setIsSignInModal] = useState(false);
+    const [isSignUpModal, setIsSignUpModal] = useState(false);
+
     const onSignInModal = () => {
         setIsSignInModal(true);
         console.log('사인인~', isSignInModal)
     }
     const onSignUpModal = () =>{
+        setIsSignUpModal(true);
         console.log('사인업!');
     }
 
@@ -39,8 +42,8 @@ export default function SignSection() {
                     <button onClick={onSignUpModal} className={SIGN_BUTTON_STYLE}>SignUp</button>
                 </div>
             </div>
-            {isSignInModal ? <SignInModal setIsSignInModal={setIsSignInModal}/> : ""}
-            <SignUpModal/>
+            {isSignInModal ? <SignInModal setIsSignInModal={setIsSignInModal}/> : undefined}
+            {isSignUpModal ? <SignUpModal setIsSignUpModal={setIsSignUpModal}/> : undefined}
         </>
     )
 }
