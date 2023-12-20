@@ -13,11 +13,9 @@ export default function SignSection() {
 
     const onSignInModal = () => {
         setIsSignInModal(true);
-        console.log('사인인~', isSignInModal)
     }
-    const onSignUpModal = () =>{
+    const onSignUpModal = () => {
         setIsSignUpModal(true);
-        console.log('사인업!');
     }
 
 
@@ -42,8 +40,8 @@ export default function SignSection() {
                     <button onClick={onSignUpModal} className={SIGN_BUTTON_STYLE}>SignUp</button>
                 </div>
             </div>
-            {isSignInModal ? <SignInModal setIsSignInModal={setIsSignInModal}/> : undefined}
-            {isSignUpModal ? <SignUpModal setIsSignUpModal={setIsSignUpModal}/> : undefined}
+            {isSignInModal && <SignInModal setIsSignInModal={setIsSignInModal}/>}
+            {isSignUpModal && <SignUpModal setIsSignUpModal={setIsSignUpModal}/>}
         </>
     )
 }
